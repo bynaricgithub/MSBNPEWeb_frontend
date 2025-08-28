@@ -1,0 +1,443 @@
+:root {
+  --theme: #091f48;
+}
+
+.button-brown {
+  background-color: var(--theme);
+  color: white;
+  font-size: larger;
+}
+
+.button-brown:hover {
+  background-color: var(--theme);
+  color: white;
+  font-size: larger;
+}
+
+.bgTheme {
+  background-color: var(--theme);
+}
+
+.bgGrey {
+  background-color: #444444;
+}
+
+/* User Details */
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.user-profile img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.user-info p {
+  margin: 0;
+  color: gray;
+}
+
+.fixedBtn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Topbar */
+/* Add this to your admin.css or relevant CSS file */
+.top-bar {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 275px;
+  z-index: 9;
+  height: 60px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-settings {
+  display: flex;
+  align-items: center;
+}
+
+.user-settings .dropdown-toggle {
+  background: none;
+  border: none;
+  color: #333;
+}
+
+.user-settings .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* ------------------Sidebar------------------------ */
+
+.side-collapsed #content {
+  margin-left: 0;
+  animation: sidebaranimate 400ms ease 0s 1 normal forwards;
+  width: 100%;
+}
+
+.side-collapsed .top-bar {
+  left: 0;
+}
+
+#sidebar ul li:hover > a {
+  background-color: #0d3582;
+  color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#content {
+  width: calc(100% - 275px);
+  transition: all 0.3s;
+  margin-top: 68px;
+  margin-left: 275px;
+}
+
+#sidebar {
+  user-select: none;
+  width: 275px;
+  max-width: 275px;
+  background: #f8f9fa;
+  color: #000;
+  transition: all 0.3s;
+  box-shadow: rgb(0 0 0 / 15%) 0px 5px 15px 0px;
+  animation: sidebaranimate 400ms ease 0s 1 normal forwards;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  height: 100vh;
+}
+
+#sidebar .list-unstyled {
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+@keyframes sidebaranimate {
+  0% {
+    opacity: 0;
+    transform: translateX(-275px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#sidebar.active {
+  margin-left: -275px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #6d7fcc;
+}
+
+#sidebar ul.components {
+  padding: 0px 0 20px;
+  /* border-bottom: 1px solid #47748b; */
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li .admin-mainHead,
+.admin-subHead {
+  padding: 10px;
+  font-size: 13px;
+  display: block;
+  /* background: var(--theme); */
+  border-bottom: 1px solid #c4c0c0;
+}
+
+#sidebar ul li .admin-mainHead {
+  color: #ffffff;
+  background: var(--theme);
+}
+
+.admin-subHead {
+  color: #000;
+  text-decoration: none;
+}
+
+#sidebar ul li .admin-mainHead:hover {
+  color: #ffffff;
+  /* background: #fff; */
+  /* opacity: 0.9; */
+}
+
+#sidebar ul li.active > .admin-mainHead[aria-expanded="true"] {
+  color: #fff;
+  background: var(--theme);
+}
+
+#sidebar .dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+li .admin-mainHead:hover {
+  text-decoration: none;
+  opacity: 0.75;
+  transition: all 0.15s ease-in-out;
+}
+
+li .admin-mainHead {
+  transition: all 0.15s ease-in-out;
+}
+
+.sortBtn {
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  border-collapse: collapse;
+}
+
+.sortBtn button {
+  width: 30px;
+  height: 30px;
+}
+
+.menuList {
+  border: 1px solid #d0d0d0;
+  padding: 4px 10px;
+  align-items: center;
+  border-collapse: collapse;
+}
+
+.subMenuList .subMenuList .menuList {
+  padding-left: 50px;
+}
+
+.subMenuList .menuList {
+  padding-left: 30px;
+}
+
+.sortBtn label {
+  min-width: 40px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+}
+
+/* ==================== Loader ======================= */
+.admin-loader {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #3498db;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-loader-container {
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  animation: spinEntr 300ms linear 0s normal none;
+}
+
+@keyframes spinEntr {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* =====================  Tables ======================== */
+
+.admin-allTable_header th {
+  background: #091f48;
+  color: #fff;
+  min-width: 80px;
+  font-size: 14px;
+}
+
+/* =====================  Inputs ======================== */
+
+.form-control {
+  font-size: 15px;
+}
+
+.form-control:focus {
+  /* border-color: #05386B; */
+  border-color: var(--theme);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* =====================  Alerts ======================== */
+
+.alert {
+  position: relative;
+  border: 0;
+}
+
+.alert-danger {
+  color: #ff5560;
+  background-color: #ffe4e6;
+  z-index: 99;
+  font-weight: 600;
+}
+
+/* ============== Buttons ===================*/
+
+.admin-btn-primary,
+.admin-btn-primary:hover,
+.admin-btn-primary:active {
+  color: #ffffff;
+  background-color: var(--theme);
+}
+
+.admin-deptListtitle {
+  margin-top: 0;
+}
+
+.masonry-grid {
+  column-count: 4;
+  /* Number of columns in the grid */
+  column-gap: 16px;
+  /* Gap between columns */
+}
+
+.masonry-item {
+  color: white;
+  /* padding: 16px; */
+  /* background-color: #4caf50; */
+  /* font-size: 1.2em; */
+  border-radius: 8px;
+  margin-bottom: 16px;
+  break-inside: avoid;
+  /* Prevents item breaking into multiple columns */
+  box-sizing: border-box;
+}
+
+/* .admin-profile-form {
+    margin-top: -70px;
+} */
+
+/* ============================================= */
+/* long loader */
+/* ============================================= */
+
+.longloader {
+  height: 4px;
+  width: 100vw;
+  --c: no-repeat linear-gradient(var(--theme) 0 0);
+  background: var(--c), var(--c), #d7b8fc;
+  background-size: 60% 100%;
+  animation: l16 5s infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@keyframes l16 {
+  0% {
+    background-position: -150% 0, -150% 0;
+  }
+
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+
+  100% {
+    background-position: 250% 0, 250% 0;
+  }
+}
+
+.react-bootstrap-table {
+  animation: fadeInTop 400ms ease 0s 1 normal forwards;
+}
+
+.fade-in-top {
+  animation: fadeInTop 400ms ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInTop {
+  0% {
+    transform: scale(1, 0.6);
+    transform-origin: 50% 0%;
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+}
+
+.fade-in-bottom {
+  animation: fadeInBottom 400ms ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: rotateX(-70deg);
+    transform-origin: bottom;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(1);
+    transform-origin: bottom;
+  }
+}
