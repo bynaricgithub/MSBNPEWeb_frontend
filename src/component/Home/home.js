@@ -1,10 +1,11 @@
 // Home.js
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Slider from "./slider";
 import Mainphotosection from "./mainphotosection";
 import TabBox from "./tabBox";
 import Quicklinks from "./quickLinks";
+import Spotlight from "./spotlight";
 const Home = () => {
   return (
     <>
@@ -34,6 +35,11 @@ const Home = () => {
             </Col>
           </Row>
         </div>
+      </div>
+      <div className="py-1">
+        <Container>
+          <Spotlight />
+        </Container>
       </div>
     </>
   );
