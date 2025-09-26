@@ -24,9 +24,10 @@ const ReusableTableContent = ({ type, title }) => {
           const downloadsArray = parseArray(item.downloads);
           return {
             heading: item.title,
-            // imageUrl: item.imageUrl,
+            imageUrl: item.imageUrl,
             date: item.date?.split("T")[0] || "",
             downloads: downloadsArray,
+            mainUrl: item.mainUrl,
           };
         });
 
@@ -83,6 +84,21 @@ const ReusableTableContent = ({ type, title }) => {
           </>
         );
       },
+    },
+
+    {
+      text: "Link",
+      dataField: "title",
+      customRender: (_, row) => {
+        return (
+          <>
+            <a href={row.mainUrl}>Download</a>
+          </>
+        );
+      },
+      width: "150px",
+      thClassName: "text-center",
+      tdClassName: "text-center",
     },
     {
       text: "Date of Publish",
