@@ -40,7 +40,7 @@ class HeadNav extends Component {
               </div>
               <div className="mainTitle">
                 <Link to="/">
-                  <h1>महाराष्ट्र राज्य नर्सिंग आणि पॅरामेडिकल शिक्षण मंडळ</h1>
+                  <h1>महाराष्ट्र राज्य शुश्रुषा व परवायधिक शिक्षण मंडळ</h1>
                   <h5>Maharashtra State Board of Nursing and Paramedical Education</h5>
                 </Link>
               </div>
